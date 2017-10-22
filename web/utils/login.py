@@ -9,9 +9,10 @@ from selenium.common.exceptions import *
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import time
 
 def login(uid, pwd):
-    driver = webdriver.PhantomJS()
+    driver = webdriver.Chrome()
     try:
         driver.get('http://www.youku.com/')
         login = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CLASS_NAME, 'avatar')))
@@ -26,6 +27,8 @@ def login(uid, pwd):
                 EC.presence_of_element_located((By.ID, 'YT-nloginSubmit')))
             login_buttom.click()
             try:
+                login = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CLASS_NAME, 'avatar')))
+                login.click()
                 cookies = driver.get_cookies()
                 return cookies
             except Exception as e:

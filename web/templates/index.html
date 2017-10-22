@@ -1,10 +1,270 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html>
+<style>
+body {
+margin:0;
+}
+.button {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 14px/100% Arial, Helvetica, sans-serif;
+	padding: .6em 1em .6em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .3em; 
+	-moz-border-radius: .3em;
+	border-radius: .3em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.button:hover {
+	text-decoration: none;
+}
+.button:active {
+	position: relative;
+	top: 1px;
+}
+.green {
+	color: #000000;
+	border: solid 1px #f3cf0c;
+	background: #eaf312;
+	background: -webkit-gradient(linear, left top, left bottom, from(#eaf312), to(#f3cf0c));
+	background: -moz-linear-gradient(top, #eaf312, #f3cf0c);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#7db72f', endColorstr='#4e7d0e');
+}
+.green:hover {
+	background: #f3cf0c;
+	background: -webkit-gradient(linear, left top, left bottom, from(#eaf312), to(#f3cf0c));
+	background: -moz-linear-gradient(top, #eaf312, #f3cf0c);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#6b9d28', endColorstr='#436b0c');
+}
+.green:active {
+	color: #f3c412;
+	background: -webkit-gradient(linear, left top, left bottom, from(#d0ac18), to(rgba(255, 210, 49, 0.94)));
+	background: -moz-linear-gradient(top, #d0ac18, #ffd231);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#4e7d0e', endColorstr='#7db72f');
+}
+.white {
+	color: #606060;
+	border: solid 1px #b7b7b7;
+	background: #fff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+	background: -moz-linear-gradient(top,  #fff,  #ededed);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
+}
+.white:hover {
+	background: #ededed;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dcdcdc));
+	background: -moz-linear-gradient(top,  #fff,  #dcdcdc);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dcdcdc');
+}
+.white:active {
+	color: #999;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#fff));
+	background: -moz-linear-gradient(top,  #ededed,  #fff);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#ffffff');
+}
+.button1 {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 20px/100% Arial, Helvetica, sans-serif;
+	padding: .6em 3.35em .6em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .3em; 
+	-moz-border-radius: .3em;
+	border-radius: .3em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.button1:hover {
+	text-decoration: none;
+}
+.button1:active {
+	position: relative;
+	top: 1px;
+}
+.form-control 
+	{ 
+	display: block; 
+	width: 90%; 
+	height: 34px; 
+	padding: 6px 12px; 
+	font-size: 14px; 
+	line-height: 1.428571429; 
+	color: #555555; 
+	vertical-align: middle; 
+	background-color: #ffffff; 
+	border: 1px solid #cccccc; 
+	border-radius: 4px; 
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); 
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); 
+	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; 
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; 
+	} 
+.form-control:focus 
+	{ 
+	border-color: #66afe9; 
+	outline: 0; 
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6); 
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6); 
+	} 
+.form-control1 
+	{ 
+	display: block; 
+	width: 100%; 
+	height: 20px; 
+	padding: 6px 12px; 
+	font-size: 14px; 
+	line-height: 1.428571429; 
+	color: #555555; 
+	vertical-align: middle; 
+	background-color: #ffffff; 
+	border: 1px solid #cccccc; 
+	border-radius: 4px; 
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); 
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); 
+	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; 
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; 
+	} 
+.form-control1:focus 
+	{ 
+	border-color: #66afe9; 
+	outline: 0; 
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6); 
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6); 
+	} 
+.background
+  {
+  position:absolute;
+  top:50px;
+  left:0px
+  width:100%;
+  bottom:0;
+  }
+.topbarleft
+  {
+    color:black;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.25),0 1px 10px rgba(0,0,0,0.25);
+	font-family:Segoe UI;
+	font-weight:150;
+	position:absolute;
+	top:10px;
+	left:180px;
+	width:380px;
+	height:77px;
+	}
+.topbarright
+  {
+    color:black;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.25),0 1px 10px rgba(0,0,0,0.25);
+	font-family:Segoe UI;
+	font-weight:150;
+	position:absolute;
+	right:115px;
+	top:12px;
+	width:580px;
+	height:77px;
+	}
+.search
+	{
+	position:absolute;
+	top:8px;
+	right:396px;
+	width:115px;
+	height:15px;
+	}
+.signin
+	{
+	position:absolute;
+	top:8px;
+	right:163px;
+	width:200px;
+	height:15px;
+
+	}
+.introduction
+  {
+    color:white;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.25),0 1px 15px rgba(0,0,0,0.50);
+	font-family:Segoe UI;
+	position:absolute;
+	left:180px;
+	top:96px;
+	width:663px;
+	height:275px;
+  }
+.signup
+  {
+    color: #ffffff;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.25),0 1px 30px rgba(0,0,0,0.75);
+	font-family:Segoe UI;
+	font-weight:100;
+	font-size:7px;
+	position:absolute;
+	top:160px;
+	right:200px;
+	width:310px;
+	height:310px;
+  }
+</style>
 <body>
-<>
+	<div class="background">
+		<img src="static/img/home-hero.jpg" width="100%">
+	</div>
+    <div class="topbarleft">
+		<style>
+		.a:link {text-decoration:none;}
+		.a:visited {text-decoration:none;}
+		.a:hover {text-decoration:none;}
+		.a:active{text-decoration:none;}
+		</style>
+		<a href="#">
+	    <img src="static/img/icon.png" height="30px" width="30px" align="center"></a>
+	    <a class="a" href="personal" style='color:black'>Personal</a>&nbsp;
+	    <a class="a" href="open-source" style='color:black'>Open source</a>&nbsp;
+	    <a class="a" href="business" style='color:black'>Business</a>&nbsp;
+	    <a class="a" href="explore" style='color:black'>Explore</a>
+	</div>
+	<div class="topbarright">
+		<a class="a" href="pricing" style='color:black'>Pricing</a>&nbsp;&nbsp;&nbsp;
+		<a class="a" href="blog" style='color:black'>Blog</a>&nbsp;&nbsp;&nbsp;
+		<a class="a" href="support" style='color:black'>Support</a>&nbsp;&nbsp;
+	</div>
+	<div class="search">
+		<input class="form-control1" type="text" name="search" placeholder="Search">
+	</div>
+	<div class="signin">
+		<button type="button" class="button white">Sign in</button>
+		<button type="button" class="button green">Sign up</button>
+	</div>
+	<div class="introduction" >
+        <p style="font-size:58px;font-weight:100;line-height:1.0em;">The&nbsp;&nbsp;world&nbsp;<br/>is&nbsp;&nbsp;for&nbsp;&nbsp;"I"s&nbsp;</p>
+		<p style="font-size:20px;font-weight:50px;line-height:1.2;">Millions of developers use vKnow to build user <br/>portraits, analysis their favorites, and share together<br/> on deep learning technologies.</p>
+	</div>
+	<div class="signup">
+	    <form action="/login">
+			<input class="form-control" type="text" name="uid" placeholder="Pick a username">
+			<br/>
+			<input class="form-control" type="text" name="emailaddress" placeholder="Enter your email address">
+			<br/>
+			<input class="form-control" type="password" name="pwd" placeholder="Create a password">
+        </form>
+	    <style>
+	    a:link {text-decoration:none;color:white}
+ 	    a:visited {text-decoration:none;}
+ 	    a:hover {text-decoration:underline;color:white}
+ 	    a:active {text-decoration:underline;}
+	    </style>
+	    <p>Use at least one letter, one numeral, and seven characters.</p>
+	    <button type="button" class="button1 green" size=12px>Draw your personal portrait!</button>
+	    <p align="center">By clicking "Sign up for vKnow", you agree to our <a href="terms-of-service">terms of service</a> and <a href="privacy-policy">privacy policy.</a> We'll occasionally send you account related emails.</p>
+	</div>
 </body>
 </html>

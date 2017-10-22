@@ -9,7 +9,6 @@ import requests
 def spider(uid, pwd):
     login_cookies = login(uid, pwd)
     s = requests.Session()
-
     for cookie in login_cookies:
         c = requests.cookies.RequestsCookieJar()
         c.set(cookie['name'], cookie['value'], path=cookie['path'], domain=cookie['domain'])
